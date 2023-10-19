@@ -1,10 +1,16 @@
+/* ??? 구글 폰트 적용방법 */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
 /* 기본 스타일 시트를 초기화 하는 CSS코드_START */
 /* 작성 이유: 웹 브라우저(엣지, 크롬, IE 등)마다 HTML 태그의 기본 CSS 값이 존재한다.
 그 기본 값을 초기화 해주기 위해 작성한다. */
 * {
   margin: 0;
   padding: 0;
-  /* ??? */
+  /* ??? box-sizing 속성 */
+  /* box-sizing 속성: 박스모델에서 요소의 전체 너비와 높이를 어떻게 계산하는지 설정한다.
+  1. box-sizing: content: content box를 기준으로 크기를 정한다.
+  2. box-sizing: border-box: border를 기준으로 크기를 정한다. (디자인하기 유리하여 선호한다.) */
   box-sizing: border-box;
 }
 /* a: a 태그 전체
@@ -34,13 +40,16 @@ li {
 }
 header {
   /* ??? 요구사항으로 header는 스크롤을 내려도 상단에 고정시키고 싶다.
-  원래는 position: absolute 값을 지정해야 하지만, 부드럽게 보이려면 JS 코드가 필요해서 일단 absolute값으로 지정했다. */
-  position: absolute;
+  고정을 위해 position: fixde 값을 적용한다. */
+  position: fixed;
+  /* ??? top 속성: 이격시길 거리
+  top, bottom, left, right 속성은 position의 하위 속성으로 position이 적용되어있어야 한다.
+  */
   top: 0;
   /* !!! header의 요구사항을 갖추려면 z-index: 1의 값을 가져야 한다.  */
   z-index: 1;
   /* !!! 글 색상은 상속되는 속성으로 부모 태그에 적용하면 하위 태그에도 자동으로 적용된다. */
-  color: black;
+  color: white;
   /* container클래스의 값을 상속받아 width: 1140px가 된다. */
   width: 100%;
   /* HTML 기본값으로 1rem=16px 이므로, padding: 16px가 된다. */
@@ -57,6 +66,9 @@ header .container {
   width: 100%;
 }
 /* ??? header .container에서 display: flex와 정렬 속성들을 적용했는데, header nav ul에는 flex와 정렬 속성들이 상속이 안되는건지? */
+/* 상속되는 속성과 상속이 되지않는 속성
+1. 상속되는 속성: font-family, font-size, font-weight, line-height, visibility, opacity, color, line-height, text-align, white-space, list-style
+2. 상속되지 않는 속성: margin, padding, border , box-sizing, display, background, vertical-align, text-ecoration, top/right/bottom/left, position, overflow, width/height */
 header nav ul {
   display: flex;
 }
@@ -77,9 +89,108 @@ header h1 button {
   font-size: 2rem;
   /* ??? font-weight: 글자의 굵기를 정하는 속성 */
   font-weight: bold;
+  color: white;
 }
 header nav ul li button {
   font-size: 1.2rem;
+  color: white;
 }
 /* 헤더 영역 CSS_END */
 
+/* 메인 영역 CSS START */
+main {
+  width: 100%;
+  /* ??? 단위 */
+  height: 100vh;
+  color: white;
+  /* ??? center center background 기본 값 배열 */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./images/me.jpg") center center;
+  /* !!! background-size:cover */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ??? text-align과 align-items 차이 */
+  text-align: center;
+}
+/* !!! h태그 단계적에 비례해 font-size를 적용하지 않아도 된다 */
+main h4 {
+  font-size: 2rem;
+}
+main h2 {
+  font-size: 3.5rem;
+  margin: 2rem 0;
+  /* ??? letter-spacing */
+  letter-spacing: 3px;
+  font-family: "Varela Round", sans-serif;
+}
+main p {
+  /* !!! max-width */
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+/* ??? 클래스 선택자 사용법으로 태그.클래스는 무슨 의미? 태그 .선택자와 다른 의미? */
+main button.download {
+  background-color: transparent;
+  border: 3px solid white;
+  /* !!! border-radius의 정확한 크기 */
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  /* ??? color는 상속되는 속성인데, 왜 또 적용했을까? */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+main button.mouse {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  /* !!! position: absolute 왜? */
+  position: absolute;
+  bottom: 1rem;
+  /* ??? 50%의 기준은 무엇인가 */
+  left: 50%;
+  /* ??? transform 속성 */
+  transform: translateX(-50%);
+  /* ??? animation 속성 */
+  animation: upDown 1s ease-in-out infinite;
+  cursor: pointer;
+}
+/* ??? @의 의미, 기능 */
+/* ??? upDown 기능 */
+@keyframes upDown {
+  0% {
+    bottom: 1rem;
+  }
+  50% {
+    bottom: 1.5rem;
+  }
+  100% {
+    bottom: 1rem;
+  }
+}
+/* !!! ::after */
+main h2 span::after {
+  /* ??? content: "" 은 막대기를 표현한건지? */
+  content: "";
+  height: 40px;
+  width: 3px;
+  background-color: #fff;
+  /* ??? display: inline-block */
+  display: inline-block;
+  animation: blink 0.7s ease-in-out infinite;
+}
+/* ??? blink 기능 */
+@keyframes blink {
+  0% {
+    opacity: 1rem;
+  }
+  100% {
+    opacity: 1rem;
+  }
+}
+/* 메인 영역 CSS END */

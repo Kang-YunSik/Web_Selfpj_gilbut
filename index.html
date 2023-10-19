@@ -1,14 +1,27 @@
-<!-- HTML 기본 구조 만들기 -->
+<!-- HTML 기본 구조 만들기_START -->
 <!DOCTYPE html>
-<!-- zxx값은 웹 페이지의 주 언어를 쉽게 파악할 수 없을 지만 HTML 적합성 검사에서 통과해야 할 때 사용하는 값 -->
+<!-- ??? zxx값은 웹 페이지의 주 언어를 쉽게 파악할 수 없을 지만 HTML 적합성 검사에서 통과해야 할 때 사용하는 값 -->
 <html lang="zxx">
   <head>
     <meta charset="UTF-8" />
-    <!-- ??? -->
+    <!-- ??? http-equiv속성과 content속성-->
+    <!-- http-equiv 속성: content 속성에 명시된 값에 대한 HTTP 헤더를 제공합니다.
+    만약 http-equiv 속성이 명시되어있다면, content 속성도 반드시 명시되어야 합니다.
+    http-equiv="X-UA-Compatible: content의 표준 모드임을 명시하는 값-->
+    <!-- content="IE=edge" : IE브라우저에서 가장 최신 표준 모드를 선택하는 문서 모드 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Project</title>
-    <!-- ??? integrity crossorigin referrerpolicy -->
+    <!-- ??? integrity, crossorigin, referrerpolicy 속성 -->
+    <!-- integrity 속성: CDN보안이 뚫리거나 변조되었을 때를 방지하기 위한 코드이다.
+    CDN코드를 제공한 페이지에 코드 값이 같이 존재한다. -->
+    <!-- crossorigin 속성: 다른 출처끼리 자원을 공유할 수 있게 권한을 부여하는 것을 CORS(Cross Origin Resource Sharing)라고 한다.
+    이는 SOP(Same-Origin Policy) 보안 정책을 위해 사용된다.
+    SOP는 웹 사이트간 정보 교류에 제한을 두는 정책으로 동일한 출처에서만 자원을 공유할 수 있다는 정책이다.
+    이는 악의적으로 만든 도메인에서 정보를 훔쳐가는 것을 방지한다.
+    따라서, font-awesome을 사용하기 위해 자원을 요청하고, 이는 SOP 정책에 위반되기에 CORS를 허용해줘야 한다.
+    즉, crossorigin="anonymous": 값을 적용하여 CDN 홈페이지로 부터 폰트 데이터 자원을 공유받을 수 있다. -->
+    <!-- ??? referrerpolicy 속성: -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -17,8 +30,12 @@
       referrerpolicy="no-referrer"
     />
     <!-- ??? rel의미, 위에서 동일한 rel이 있어도 상관없는지? -->
+    <!-- rel 속성은 현재 문서와 외부 리소스 사이의 연관 관계를 명시합니다.
+    rel 속성은 반드시 명시되어야 하는 필수 속성입니다.
+    스타일 시트(stylesheet)로 사용할 외부 리소스를 불러옴. -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!-- HTML 기본 구조 만들기_END -->
 
   <body>
     <!-- 헤더 영역 만들기_START -->
@@ -29,7 +46,7 @@
           <!-- 클릭하면 이동하는 글자처리 : <button> -->
           <button>SU</button>
         </h1>
-        <!-- <nav> : 웹 페이지에서 내부의 다른 영역이나 외부를 연결 -->
+        <!-- <nav> : 웹 페이지에서 내부의 다른 영역이나 외부를 연결하는 요소들 작성 -->
         <nav>
           <ul>
             <li>
@@ -55,5 +72,40 @@
       </div>
     </header>
     <!-- 헤더 영역 만들기_END -->
+
+    <!-- 메인 영역 만들기 START -->
+    <!-- ??? main 태그 -->
+    <!-- main태그는 해당 문서의 주 콘텐츠를 정의할 때 사용한다. 
+    <header> <aside> <footer> <nav> 등과 같은 역할의 태그이다.
+    문서 전반에 단 하나의 main태그만 존재해야 하며, 반복되는 내용을 포함해서는 안된다. -->
+    <main id="main">
+      <div class="container">
+        <h4>Welcome</h4>
+        <!-- !!! h, span, p태그 차이점 -->
+        <!-- h 태그 : 제목 작성, 블록요소(태그마다 줄바꿈),
+        h 태그는 h1부터 순서대로 작성하는 것이 좋다.
+        검색엔진은 단계적으로 태그를 검색하는데 중간에 단계가 생략되면 이후에는 검색을 하지 않는다.-->
+        <!-- span 태그 : 인라인 요소 그룹화, 인라인요소(공간이 부족할 때 줄바꿈)
+        텍스트 중간에 위치하며, 특정 부분만 디자인을 다르게 적용하고 싶을 때 활용한다. -->
+        <!-- p 태그 : 본문의 문단 작성, 인라인요소
+        줄바꿈이 필요할 때는 <br>태그 사용 -->
+
+        <!-- ??? h태그를 단계적으로 사용하지 않은 특별한 이유라도 있을까? -->
+        <h2>I`M A <span>Front-End Developer</span></h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          dolor quas nulla unde ea officiis?
+        </p>
+        <button class="download">DOWNLOAD CV</button>
+        <button class="mouse">
+          <!-- ??? i 태그: i 태그 요소의 텍스트는 이탤릭체로 표현된다.
+          Font Awesome 폰트에서 아이콘을 사용할 수 있는 태그이다. -->
+          <!-- ??? fa-solid, fa-computer-mouse가 갖는 의미:
+            Font Awesome 폰트에서 마우스 아이콘을 나타낸다. -->
+          <i class="fa-solid fa-computer-mouse"></i>
+        </button>
+      </div>
+    </main>
+    <!-- 메인 영역 만들기 END -->
   </body>
 </html>
