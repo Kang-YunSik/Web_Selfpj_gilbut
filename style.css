@@ -1,0 +1,85 @@
+/* 기본 스타일 시트를 초기화 하는 CSS코드_START */
+/* 작성 이유: 웹 브라우저(엣지, 크롬, IE 등)마다 HTML 태그의 기본 CSS 값이 존재한다.
+그 기본 값을 초기화 해주기 위해 작성한다. */
+* {
+  margin: 0;
+  padding: 0;
+  /* ??? */
+  box-sizing: border-box;
+}
+/* a: a 태그 전체
+a:link: a 태그 방문 전 링크 상태
+a:visited: a 태그를 방문한 후 */
+/* !!! a 태그 스타일 적용 순서는 아래와 같이 해야된다. 순서 바뀌면 적용 안됨
+a:link -> a:visited -> a:hover -> a:active */
+a,
+a:link,
+a:visited {
+  /* 글자색: 상속 */
+  color: inherit;
+  /* 밑줄: 없음 */
+  text-decoration: none;
+}
+li {
+  /* list 모양: 없음 */
+  list-style: none;
+}
+/* 기본 스타일 시트를 초기화 하는 CSS코드_END */
+
+/* 헤더 영역 CSS_START */
+/* container클래스가 있는 div태그는 기준 너비를 유지하는 역할로 중요한 클래스다.  */
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+header {
+  /* ??? 요구사항으로 header는 스크롤을 내려도 상단에 고정시키고 싶다.
+  원래는 position: absolute 값을 지정해야 하지만, 부드럽게 보이려면 JS 코드가 필요해서 일단 absolute값으로 지정했다. */
+  position: absolute;
+  top: 0;
+  /* !!! header의 요구사항을 갖추려면 z-index: 1의 값을 가져야 한다.  */
+  z-index: 1;
+  /* !!! 글 색상은 상속되는 속성으로 부모 태그에 적용하면 하위 태그에도 자동으로 적용된다. */
+  color: black;
+  /* container클래스의 값을 상속받아 width: 1140px가 된다. */
+  width: 100%;
+  /* HTML 기본값으로 1rem=16px 이므로, padding: 16px가 된다. */
+  padding: 1rem;
+}
+header .container {
+  /* 한 줄로 배치하는데 유리한 flex 사용 */
+  display: flex;
+  /* !!! justify-content: space-between: 가로축 방향으로 아이템들의 사이에 균일한 간격을 만들어 줍니다. */
+  justify-content: space-between;
+  /* !!! align-items: center: 수직충 방향으로 아이템들을 가운데로 정렬합니다. */
+  align-items: center;
+  /* container클래스의 값을 상속받아 width: 1140px가 된다. */
+  width: 100%;
+}
+/* ??? header .container에서 display: flex와 정렬 속성들을 적용했는데, header nav ul에는 flex와 정렬 속성들이 상속이 안되는건지? */
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  /* 내부 여백 적용 */
+  padding: 10px;
+}
+header button {
+  /* ??? background: transparent: 배경색을 투명하게 적용
+  none과 transparent의 차이: background속성은 color image repeat attachment position size 값을 순서대로 받고
+  none만 적용할 시 image 값에 적용된다. 이 때, color는 initial 값을 갖는다.
+  transparent만 적용할 시 color에 적용된다. */
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+header h1 button {
+  font-size: 2rem;
+  /* ??? font-weight: 글자의 굵기를 정하는 속성 */
+  font-weight: bold;
+}
+header nav ul li button {
+  font-size: 1.2rem;
+}
+/* 헤더 영역 CSS_END */
+

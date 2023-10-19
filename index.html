@@ -1,0 +1,59 @@
+<!-- HTML 기본 구조 만들기 -->
+<!DOCTYPE html>
+<!-- zxx값은 웹 페이지의 주 언어를 쉽게 파악할 수 없을 지만 HTML 적합성 검사에서 통과해야 할 때 사용하는 값 -->
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- ??? -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <!-- ??? integrity crossorigin referrerpolicy -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ??? rel의미, 위에서 동일한 rel이 있어도 상관없는지? -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- 헤더 영역 만들기_START -->
+    <header>
+      <!-- "container" class <div>는 전체 프로젝트의 기준 너비를 유지하기 위한 wrapper 역할 -->
+      <div class="container">
+        <h1>
+          <!-- 클릭하면 이동하는 글자처리 : <button> -->
+          <button>SU</button>
+        </h1>
+        <!-- <nav> : 웹 페이지에서 내부의 다른 영역이나 외부를 연결 -->
+        <nav>
+          <ul>
+            <li>
+              <!-- 클릭하면 이동하는 글자처리 : <button> -->
+              <!-- 추후 JS 코드로 제어 -->
+              <!-- JS 코드로 제어하지 않는다면, <a> 태그로 링크값을 부여해줘도 됨 -->
+              <!-- 이하 동문 -->
+
+              <!-- ??? 버튼을 하나의 <li>로 묶지 않는 이유. 차이점 -->
+              <button>About</button>
+            </li>
+            <li>
+              <button>Features</button>
+            </li>
+            <li>
+              <button>portfolio</button>
+            </li>
+            <li>
+              <button>Contact</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- 헤더 영역 만들기_END -->
+  </body>
+</html>
