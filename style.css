@@ -314,7 +314,7 @@ section .do-me .do-inner {
   background-color: #fff;
   /* 각 do-inner박스 가로길이 30% + margin-right 5% = 35%  */
   /* 35% + 35% + 30%(.do-inner:last-child {margin-right: 5%} = 100% */
-  /* ??? flex로 배치해보기 */
+  /* +++ flex로 배치해보기 */
   width: 30%;
   padding: 2rem;
   float: left;
@@ -342,4 +342,49 @@ section .do-me .do-inner:hover {
 section .do-me .do-inner:hover i {
   color: white;
 }
+/* ??? 무슨 원리로 스크롤이랑 따라옴? */
+/* ??? 왜 높이 값을 줘야 이미지가 보임? */
+.bg {
+  background: url("./images/background.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 650px;
+}
 /***** What I Do 섹션 영역 CSS END *****/
+
+/***** PortFolio 섹션 영역 CSS START *****/
+/* ??? What I Do 섹션과 clear하는 태그 위치가 다르다? */
+section.portfolio::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* ??? 사진 크기가 다를 때 해보기 */
+section.portfolio .portfolio-inner {
+  width: 30%;
+  margin-right: 5%;
+  margin-bottom: 3rem;
+  padding: 1rem 1rem 1.5rem 1rem;
+  float: left;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+}
+/* +++ 이렇게 하지말고 flex로 반응형 만들기. 브라우저 크기에 따라 이미지 보여주기 */
+section.portfolio .portfolio-inner:nth-child(3n) {
+  margin: 0;
+}
+section.portfolio .portfolio-inner img {
+  width: 100%;
+  /* ??? 왜 block이지? */
+  display: block;
+}
+section.portfolio .portfolio-inner strong {
+  color: #ff6a6a;
+  margin: 0.5rem 0;
+  /* ??? 왜 block이지? */
+  display: block;
+}
+section.portfolio .portfolio-inner h3 {
+  font-size: 1.75rem;
+}
+/***** PortFolio 섹션 영역 CSS END *****/
