@@ -17,6 +17,8 @@
 4. link 태그에서의 rel의미
 5. main 태그
 6. i 태그와 Font Awesome 폰트의 아이콘
+7. section 태그 사용시 주의사항과 article 태그와의 차이점
+8. strong 태그와 논리적 태그vs물리적 태그
 
 ---
 
@@ -55,5 +57,12 @@
 7. h태그 단계적에 비례해 font-size를 적용하지 않아도 된다.
 8. max-width 활용
 9. border-radius 단축 속성
+10. section 태그에 스타일을 주는 경우 (관례상 스타일을 주지 않음)
+11. float clear하는 마법사
+
+---
+
+1. Web퍼블리싱 과정: HTML문서를 구역별로 작성 -> CSS코드 작성 -> JS구현
+2. CSS코드 선택자 선언법: 모든 부모태그도 선택하여 정확히 구분한다.
 
 # JS

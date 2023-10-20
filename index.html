@@ -107,5 +107,61 @@
       </div>
     </main>
     <!-- 메인 영역 만들기 END -->
+
+    <!-- 섹션 영역 만들기 - About Me START -->
+    <!-- ??? section 태그 -->
+    <!-- section 태그 사용시 주의사항
+    1. section 태그로 요소를 묶어 스타일을 주기보단 <div>를 활용하는 것이 좋다.
+    2. 보통 h2 ~ h6 태그가 포함된다.
+    3. section 태그는 주제별로 구분한 그룹이다. 논리적으로 관계있는 요소를 분리할 때 사용한다. -->
+    <!-- article 태그는 문서내에서 그룹화해서 분리하는 역할을 한다. -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="title">
+          <h4>Who Am I</h4>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-self">
+          <div class="left">
+            <img src="./images/me_alone.jpg" alt="" />
+          </div>
+          <div class="right">
+            <!-- ??? strong 태그 -->
+            <!-- 1. strong 태그: 굵은 글씨로 표시(논리적 태그: 태그에 의미가 존재함) -->
+            <!-- 2. b 태그: 굵은 글씨로 표시(물리적 태그: 태그에 의미가 없고, 텍스트 스타일만 변화) -->
+            <!-- 3. em 태그: 이테릭 글씨로 표시(논리적 태그) -->
+            <h3>Hello, <strong>I`m Sucoding</strong></h3>
+            <p>I`m Web Publisher And Web Front-End Developer.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+              veritatis aperiam accusantium.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+              praesentium doloremque quos quis est officiis.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+              omnis quibusdam.
+            </p>
+            <div class="social">
+              <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-twitch"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 섹션 영역 만들기 - About Me END -->
   </body>
 </html>

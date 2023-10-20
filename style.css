@@ -1,7 +1,7 @@
 /* ??? 구글 폰트 적용방법 */
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
-/* 기본 스타일 시트를 초기화 하는 CSS코드_START */
+/***** 기본 스타일 시트를 초기화 하는 CSS코드_START *****/
 /* !!! 기본 스타일 시트 초기화 CSS코드 */
 /* 작성 이유: 웹 브라우저(엣지, 크롬, IE 등)마다 HTML 태그의 기본 CSS 값이 존재한다.
 그 기본 값을 초기화 해주기 위해 작성한다. */
@@ -31,9 +31,9 @@ li {
   /* list 모양: 없음 */
   list-style: none;
 }
-/* 기본 스타일 시트를 초기화 하는 CSS코드_END */
+/***** 기본 스타일 시트를 초기화 하는 CSS코드_END *****/
 
-/* 헤더 영역 CSS_START */
+/***** 헤더 영역 CSS_START *****/
 /* container클래스가 있는 div태그는 기준 너비를 유지하는 역할로 중요한 클래스다.  */
 .container {
   width: 1140px;
@@ -96,9 +96,9 @@ header nav ul li button {
   font-size: 1.2rem;
   color: white;
 }
-/* 헤더 영역 CSS_END */
+/***** 헤더 영역 CSS_END *****/
 
-/* 메인 영역 CSS START */
+/***** 메인 영역 CSS START *****/
 main {
   width: 100%;
   /* ??? vh단위 */
@@ -239,4 +239,64 @@ main h2 span::after {
     opacity: 0;
   }
 }
-/* 메인 영역 CSS END */
+/***** 메인 영역 CSS END *****/
+
+/***** 섹션 영역 CSS START *****/
+/* !!! section 태그에 스타일을 주는 경우 */
+/* 여러 개의 section 태그가 존재할 수 있기 때문에 폰트 속성이나 margin, padding 등 기본적인 스타일만 준다.  */
+section {
+  font-family: "Poppins", sans-serif;
+  padding: 5rem 0;
+}
+section:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+section .title h4 {
+  font-size: 1.35rem;
+  color: #ed4848;
+  /* ??? 굳이 relative? */
+  position: relative;
+}
+section .title h2 {
+  font-size: 3.5rem;
+}
+section .title p {
+  font-size: 1.15rem;
+}
+/* !!! float clear하는 마법사 */
+section .about-self::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+section .about-self .left {
+  /* %의 기준: container width=1140px */
+  width: 50%;
+  float: left;
+}
+section .about-self .left img {
+  /* %의 기준: container width=1140px */
+  max-width: 100%;
+}
+section .about-self .right {
+  width: 50%;
+  /* 가로 길이를 절반을 적용했기 때문에, left=right이다. */
+  float: right;
+  padding: 0 2rem;
+}
+section .about-self .right h3 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+section .about-self .right h3 strong {
+  color: #ed4848;
+}
+section .about-self .right p {
+  font-size: 1.15rem;
+  margin: 1rem 0;
+}
+section .about-self .right .social a {
+  font-size: 2.5rem;
+  margin-right: 0.2rem;
+}
+/***** 섹션 영역 CSS START *****/
