@@ -28,10 +28,32 @@
 2. top, bottom, left, right 속성
 3. 상속되는 속성과 상속이 되지않는 속성
 4. background: transparent
+5. vh 단위
+6. 뷰포트란
+7. background-size 단축 속성
+8. linear-gradient 속성
+9. text-align과 align-items 차이
+10. letter-spacing 속성
+11. 태그명.클래스명 선택자 (태그명 .클래스명과 다름)
+12. 상속이 적용되지 않는 태그
+13. %의 기준
+14. 가운데 정렬의 마법사 코드
+15. transform 속성
+16. animation 속성과 @keyframes
+17. ::after의 하위 속성 content: "" 의 의미
+18. display: inline-block과 inline의 차이
+19. opacity 속성
 
 ---
 
-1. a 태그 스타일과 적용 순서
-2. 웹 상에서 고정된 요소 만들기: position + z-index
-3. flex와 justify-content, align-items 속성
-4. font-weight
+1. 기본 스타일 시트 초기화 CSS코드
+2. a 태그 스타일과 적용 순서
+3. 웹 상에서 고정된 요소 만들기: position + z-index
+4. flex와 justify-content, align-items 속성
+5. font-weight
+6. background-size:cover
+7. h태그 단계적에 비례해 font-size를 적용하지 않아도 된다.
+8. max-width 활용
+9. border-radius 단축 속성
+
+# JS

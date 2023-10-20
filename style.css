@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 /* 기본 스타일 시트를 초기화 하는 CSS코드_START */
+/* !!! 기본 스타일 시트 초기화 CSS코드 */
 /* 작성 이유: 웹 브라우저(엣지, 크롬, IE 등)마다 HTML 태그의 기본 CSS 값이 존재한다.
 그 기본 값을 초기화 해주기 위해 작성한다. */
 * {
@@ -100,18 +101,34 @@ header nav ul li button {
 /* 메인 영역 CSS START */
 main {
   width: 100%;
-  /* ??? 단위 */
+  /* ??? vh단위 */
+  /* vh단위: vertical height. 뷰포트의 높이값. 비율은 100분의 1이다.
+    브라우저 높이값이 1000px일 때 1vh=10px */
+  /* vh단위: vertical width. 뷰포트의 너비값. */
+  /* 위의 단위들은 반응형 홈페이지에서 자주 쓰이는 단위이다. 100vh로 스크린에 꽉차는 헤드라인을 만들 수 있다. */
+  /* ??? 뷰포트란: 사용자 브라우저 창의 크기 */
   height: 100vh;
   color: white;
-  /* ??? center center background 기본 값 배열 */
+  /* ??? center center, background 기본 값 배열 */
+  /* background-size 단축 속성: color, image, repeat, position/size, origin, clip, attachment
+   size는 position 뒤에 /문자로 구분해야 한다.
+   background-position: x위치 y위치 */
+  /* ??? 축약형이란 속성의 값을 한 줄로 작성하는 것 */
+  /* ??? linear-gradient */
+  /* linear-gradient 속성: 색상에 그라데이션을 적용하는 속성.
+  linear-gradient(방향, 색상1 정지점1, 색상2 정지점2 ... 색상n 정지점n) */
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("./images/me.jpg") center center;
   /* !!! background-size:cover */
+  /* 1. contain: (안짤림)비율을 유지하면서 요소를 벗어나지 않는 범위에서 최대로 확대
+     2. cover: (짤림)배율을 유지하면서 요소 범위까지 width, height 중 작은 값을 가진 쪽을 최대로 확대 */
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   /* ??? text-align과 align-items 차이 */
+  /* text-align: 텍스트에 적용
+     align-items: flex item에 적용 */
   text-align: center;
 }
 /* !!! h태그 단계적에 비례해 font-size를 적용하지 않아도 된다 */
@@ -122,24 +139,32 @@ main h2 {
   font-size: 3.5rem;
   margin: 2rem 0;
   /* ??? letter-spacing */
+  /* letter-spacing: 폰트의 자간 길이.
+  한글은 다른 언어와 달리 자간이 긴 편으로 보통 -1px, -2px 설정해주는 것이 좋다. */
   letter-spacing: 3px;
   font-family: "Varela Round", sans-serif;
 }
 main p {
   /* !!! max-width */
+  /* max-width: 요소의 최대 가로 길이.
+   p태그에 적용하여 줄 바꿈을 고정시키는 용도로 활용할 수 있다. */
   max-width: 500px;
   margin: 0 auto;
   font-size: 1.25rem;
 }
 /* ??? 클래스 선택자 사용법으로 태그.클래스는 무슨 의미? 태그 .선택자와 다른 의미? */
+/* 태그명.클래스명 선택자: 해당 클래스의 태그에 CSS코드를 적용한다.
+동일한 태그를 여러개 사용했지만, 서로 다르게 CSS코드를 적용하고 싶을 때 활용한다. */
 main button.download {
   background-color: transparent;
   border: 3px solid white;
   /* !!! border-radius의 정확한 크기 */
+  /* border-radius: top-left-x top-right-x bottom-right-x bottom-left-x / top-left-y top-right-y bottom-right-y bottom-left-y */
   border-radius: 20px;
   padding: 1rem 2rem;
   margin-top: 3rem;
   /* ??? color는 상속되는 속성인데, 왜 또 적용했을까? */
+  /* 상속이 적용되지 않는 태그: <a>태그와 <button>태그는 상속 */
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -150,18 +175,36 @@ main button.mouse {
   color: white;
   font-size: 2rem;
   /* !!! position: absolute 왜? */
+  /* 배치를 편하게 하기 위해서. 기준: class="download"의 inline으로 배치 */
+  /* 가운데 정렬의 마법사:
+      position: absolute or fixed;
+      top:50%; 
+      left:50%; -> 시작점을 중앙으로 이동
+      transform:translate(-50%,-50%); -> 요소를 (-50% -50%) 이동 */
   position: absolute;
   bottom: 1rem;
   /* ??? 50%의 기준은 무엇인가 */
+  /* 부모요소를 기준= class="container"의 width 1140px 50%=570px */
   left: 50%;
   /* ??? transform 속성 */
+  /* transform 속성: 요소의 위치는 모습에 변화
+    translate: 이동
+    scale: 크기 */
   transform: translateX(-50%);
   /* ??? animation 속성 */
+  /* animation 단축 속성: name, duration, timing-function, ..., iteration-count, ...
+  1. name: 애니메이션의 중간 상태를 지정하기 위한 이름. 중간 상태는 @keyframes 규칙으로 기술
+  2. duration: 애니메이션의 싸이클 시간
+  3. timing-function: 중간 상태들의 전환의 시간 간격
+    3-1. ease: 선형적인 속도
+    3-2. ease-in-out: 시작은 빠르게, 마지막은 느리게
+  4. iteration-count: 애니메이션 반복 횟수. infinite: 무한반복 */
   animation: upDown 1s ease-in-out infinite;
   cursor: pointer;
 }
-/* ??? @의 의미, 기능 */
-/* ??? upDown 기능 */
+/* ??? @keyframes의 의미, 기능 */
+/* @keyframes: 애니메이션 스타일을 구체적으로 제어
+형식: 위치 { 제어할 CSS코드 }  */
 @keyframes upDown {
   0% {
     bottom: 1rem;
@@ -175,22 +218,25 @@ main button.mouse {
 }
 /* !!! ::after */
 main h2 span::after {
-  /* ??? content: "" 은 막대기를 표현한건지? */
+  /* ??? content: "" + height&width = 막대기 */
   content: "";
-  height: 40px;
+  height: 50px;
   width: 3px;
   background-color: #fff;
-  /* ??? display: inline-block */
+  /* ??? display: inline-block과 inline의 차이 */
+  /* 1. inline-block: width, height 속성 및 margin, padding 속성 지정이 가능. 배치는 같음
+     2. inline: width, height 속성 및 margin, padding 속성 지정이 불가능 */
   display: inline-block;
   animation: blink 0.7s ease-in-out infinite;
 }
-/* ??? blink 기능 */
 @keyframes blink {
   0% {
-    opacity: 1rem;
+    /* ??? opacity: 요소의 투명도 */
+    /* number : 0.0부터 1.0까지의 수를 넣습니다. */
+    opacity: 1;
   }
   100% {
-    opacity: 1rem;
+    opacity: 0;
   }
 }
 /* 메인 영역 CSS END */
