@@ -241,7 +241,7 @@ main h2 span::after {
 }
 /***** 메인 영역 CSS END *****/
 
-/***** 섹션 영역 CSS START *****/
+/***** About Me 섹션 영역 CSS START *****/
 /* !!! section 태그에 스타일을 주는 경우 */
 /* 여러 개의 section 태그가 존재할 수 있기 때문에 폰트 속성이나 margin, padding 등 기본적인 스타일만 준다.  */
 section {
@@ -250,6 +250,9 @@ section {
 }
 section:nth-child(2n) {
   background-color: #f8f8f8;
+}
+section .title {
+  margin-bottom: 3rem;
 }
 section .title h4 {
   font-size: 1.35rem;
@@ -299,4 +302,44 @@ section .about-self .right .social a {
   font-size: 2.5rem;
   margin-right: 0.2rem;
 }
-/***** 섹션 영역 CSS START *****/ 
+/***** About Me 섹션 영역 CSS END *****/
+
+/***** What I Do 섹션 영역 CSS START *****/
+section .do-me::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+section .do-me .do-inner {
+  background-color: #fff;
+  /* 각 do-inner박스 가로길이 30% + margin-right 5% = 35%  */
+  /* 35% + 35% + 30%(.do-inner:last-child {margin-right: 5%} = 100% */
+  /* ??? flex로 배치해보기 */
+  width: 30%;
+  padding: 2rem;
+  float: left;
+  margin-right: 5%;
+  cursor: pointer;
+}
+section .do-me .do-inner:last-child {
+  margin-right: 0;
+}
+section .do-me .do-inner .icon i {
+  font-size: 2.5rem;
+  color: #ff6a6a;
+}
+section .do-me .do-inner .content h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+section .do-me .do-inner .content p {
+  font-size: 1.5rem;
+}
+section .do-me .do-inner:hover {
+  background-color: lightcoral;
+  color: white;
+}
+section .do-me .do-inner:hover i {
+  color: white;
+}
+/***** What I Do 섹션 영역 CSS END *****/
