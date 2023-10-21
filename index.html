@@ -44,7 +44,7 @@
       <div class="container">
         <h1>
           <!-- 클릭하면 이동하는 글자처리 : <button> -->
-          <button>SU</button>
+          <button data-aninmation-scroll="true" data-target="#main">SU</button>
         </h1>
         <!-- <nav> : 웹 페이지에서 내부의 다른 영역이나 외부를 연결하는 요소들 작성 -->
         <nav>
@@ -56,16 +56,24 @@
               <!-- 이하 동문 -->
 
               <!-- ??? 버튼을 하나의 <li>로 묶지 않는 이유. 차이점 -->
-              <button>About</button>
+              <button data-aninmation-scroll="true" data-target="#about">
+                About
+              </button>
             </li>
             <li>
-              <button>Features</button>
+              <button data-aninmation-scroll="true" data-target="#features">
+                Features
+              </button>
             </li>
             <li>
-              <button>portfolio</button>
+              <button data-aninmation-scroll="true" data-target="#portfolio">
+                portfolio
+              </button>
             </li>
             <li>
-              <button>Contact</button>
+              <button data-aninmation-scroll="true" data-target="#contact">
+                Contact
+              </button>
             </li>
           </ul>
         </nav>
@@ -258,5 +266,78 @@
       </div>
     </section>
     <!-- 섹션 영역 만들기 - PortFolio END -->
+    <!-- 섹션 영역 만들기 - Contact With Me START -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="title">
+          <h4>CONTACT</h4>
+          <h2>Contact With Me</h2>
+        </div>
+        <div class="contact-me">
+          <div class="left">
+            <div class="card">
+              <div class="icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="info-text">
+                <h3>phone</h3>
+                <p>010-2222-1111</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div class="info-text">
+                <h3>email</h3>
+                <p>sucoding@naver.com</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="icon">
+                <i class="fa-solid fa-location-crosshairs"></i>
+              </div>
+              <div class="info-text">
+                <h3>address</h3>
+                <p>Samseong-ro, Gangnam-gu,<br />Seoul, Republic of Korea</p>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <!-- !!! form 태그 속성 -->
+            <!-- <form> action name aceept-charset target method
+              1. action: 폼을 전송할 서버
+              2. method: 폼을 서버에 전송할 http 메소드
+                2-1. GET: 폼 데이터를 URL 끝에 붙임(노출O)
+                2-2. POST: 폼 데이터를 숨김(노출X)-->
+            <form action="#">
+              <div class="form-group">
+                <!-- ??? label 태그: form 양식에 이름을 붙이는 태그. 클릭시 해당 양식으로 커서 이동  -->
+                <!-- for 속성 값 = 태그의 id를 의미한다. -->
+                <label for="name">name</label>
+                <!-- !!! input 태그: 사용자가 폼 태그에 입력할 수 있는 공간으로 여러 type이 있다. -->
+                <!-- 1. text, password
+                    2. radio, checkbox, button
+                    3. submit, reset -->
+                <input type="text" id="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="msg">message</label>
+                <!-- ??? textarea 태그: 여러 줄 글상자 -->
+                <!-- rows와 cols 속성으로 입력될 크기를 정할 수 있다. -->
+                <textarea id="msg"></textarea>
+              </div>
+              <button>send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    <!-- 섹션 영역 만들기 - Contact With Me END -->
   </body>
 </html>
