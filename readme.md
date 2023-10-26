@@ -1,4 +1,4 @@
-## [프로젝트 설명]
+# [프로젝트 설명]
 
 - [길벗]코딩 자율학습 HTML+CSS+자바스크립트 교재에 수록된 최종 프로젝트를 클론 코딩해보고, HTML+CSS+JS의 조화를 이해하고 부족한 개념을 학습하는 목적으로 진행합니다.
 - 클론 코딩을 하면서 새로 알게된 개념을 주석 처리하여 최종적으로 readme.md에 기록합니다.
@@ -7,9 +7,9 @@
 - 반복된 내용은 주석을 달지 않습니다.
 - 최종 프로젝트를 완성한 후에는 완성된 웹 페이지를 내가 원하는 방식을 추가 및 변경해봅니다.
 
-## [새롭게 알게 된 내용]
+# [새롭게 알게 된 내용]
 
-# HTML
+## HTML
 
 1. http-equiv속성과 content속성
 2. integrity, crossorigin, referrerpolicy 속성
@@ -28,7 +28,7 @@
 3. form의 input 태그
 4. form의 textarea 태그
 
-# CSS
+## CSS
 
 1. box-sizing 속성
 2. top, bottom, left, right 속성
@@ -75,7 +75,25 @@
 4. 요소를 배치할 때 margin을 활용하고, 부모요소에 가득 차게 만들기 위해 % 단위를 활용한다.
 5. font-size, maring, padding의 크기를 rem 단위로 한 이유는 미디어쿼리를 활용해 반응형 홈페이지를 만들기 위함이다.
 
-# JS
+## JS
+
+1. 요소 선택: querySelector("CSS 선택자")
+2. split("") 메소드: 문자열을 하나씩 ""로 구분
+3. textContent: 선택자 내부 텍스트를 조작
+4. shift(): 맨 왼쪽 요소 삭제
+5. setTimeout(실행함수, n초 후 함수 실행)
+6. pop(): 맨 오른쪽 요소 삭제
+7. join(""): 배열의 모든 요소를 ""으로 합침
+8. 즉시 실행 함수
+9. addEventListener(이벤트, 실행함수)
+10. classList.add("active"): 요소에 class="active"를 추가
+11. getBoundingClientRect(): 현재 targetEl 요소의 브라우저 상단으로 부터의 거리
+
+---
+
+1. JS에서 Time은 단위는 ms이다 (1초=1000ms)
+2. requestAnimationFrame()을 사용하는 경우
+
 
 ## [피드백]
 
